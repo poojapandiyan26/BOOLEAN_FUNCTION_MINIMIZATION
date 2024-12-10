@@ -32,30 +32,42 @@ Hardware – PCs, Cyclone II , USB flasher
 
 
 **Program:**
-```
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
-
-Developed by:P.Pooja Sri
-RegisterNumber:24007629
-module exe_2(f_and,f_or,f_not,f_nor,f_nand,f_xor,f_xnor,a,b);
-input a,b;
-output f_and,f_or,f_not,f_nor,f_nand,f_xor,f_xnor;
-and(f_and,a,b);
-or(f_or,a,b);
-not(f_not,a);
-nand(f_nand,a,b);
-nor(f_nor,a,b);
-xor(f_xor,a,b);
-xnor(f_xnor,a,b);
+/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming.
+~~~
+module Boolean_min(a,b,c,d,w,x,y,z,f1,f2);
+input a,b,c,d,w,x,y,z;
+output f1,f2;
+wire adash,bdash,cdash,ddash,ydash,p,q,r,s,t,u;
+not(adash,a);
+not(bdash,b);
+not(cdash,c);
+not(ddash,d);
+not(ydash,y);
+and(p,bdash,ddash);
+and(q,adash,b,d);
+and(r,a,b,cdash);
+or(f1,p,q,r);
+and g1(s,ydash,z);
+and g2(t,x,y);
+and g3(u,w,z);
+or g4(f2,s,t,u);
 endmodule
-```
+Developed by: Pooja sri P (24007629)
 
-**Output:**
-![exp2digital](https://github.com/user-attachments/assets/01fd3030-c3cb-46cb-9432-9ab655460772)
+~~~
 
-**Timing Diagram**
-![Screenshot (87)](https://github.com/user-attachments/assets/b4ff95a9-cdb5-4733-8e64-c23dc2eaea6a)
+## RTL realization output
 
-**Result:**
-Then the basic logic gate satisfied and the logic table tables are verified
+![321858145-5e88c768-1359-4de1-9c27-30b36608cacf](https://github.com/04Varsha/BOOLEAN_FUNCTION_MINIMIZATION/assets/149035374/a86b8a88-9cfd-46f7-a430-98227cff9fc4)
+
+## Truth table
+![321858182-f2ecbac4-57f6-4136-b61b-d6a708096c3c](https://github.com/04Varsha/BOOLEAN_FUNCTION_MINIMIZATION/assets/149035374/52e5be68-d7b5-4f48-ad95-1b8848c327ec)
+
+## Timing Diagram
+
+![321858226-37003697-22ae-4e2c-91ba-23a298de0604](https://github.com/04Varsha/BOOLEAN_FUNCTION_MINIMIZATION/assets/149035374/82dea792-3035-42b6-af5c-134c0e74c8b2)
+
+## Result:
+
+Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
 
